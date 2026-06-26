@@ -1,3 +1,4 @@
+// input forms elements
 const container = document.querySelector(".container");
 const expenseContainer = document.querySelector(".expense-container");
 const dateInput = document.querySelector(".date");
@@ -5,8 +6,10 @@ dateInput.value = new Date().toISOString().split("T")[0];
 const item = document.querySelector(".item");
 const amount = document.querySelector(".amount");
 const addButton = document.querySelector(".add");
+// input form elements
 
-// TOTAL EXPENSE CONTAINER
+
+// TOTAL EXPENSE CONTAINER elements
 let total = 0;
 
 const totalExpenseDiv = document.createElement("div");
@@ -21,8 +24,15 @@ totalAmount.textContent = `$${total}`;
 totalExpenseDiv.appendChild(totalExpenseText);
 totalExpenseDiv.appendChild(totalAmount);
 container.appendChild(totalExpenseDiv);
+// total expense container Elements
+
+// LocalStorage--------------
+let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+renderExpense();
+// ---------------------------
 
 
+// Add button----------------------
 addButton.addEventListener("click", () => {
 const expense = ({
   date: dateInput.value,
@@ -32,9 +42,13 @@ const expense = ({
 });
 expenses.push(expense);
 renderExpense();
+saveToStorage();
 });
 
-let expenses = [];
+// Add button ------------------------
+
+
+// Display expense-------------------
 function renderExpense() {
   expenseContainer.innerHTML = "";
   total = 0;
@@ -65,12 +79,23 @@ function renderExpense() {
       total -= parseFloat(itemAmount.textContent.replace("$", ""));
       expenses.splice(index, 1);
       renderExpense();
+      saveToStorage();
     })
     
   });
   totalExpense();
-}
 
+}
+// Display expense-------------------
+
+// Total expense--------------
 function totalExpense() {
   totalAmount.textContent = `$${total.toFixed(2)}`;
 }
+// Total expenses--------------
+
+// Save to storage------------
+function saveToStorage(){
+  localStorage.setItem("expenses", JSON.stringify(expenses));
+}
+// Save to storage------------
