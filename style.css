@@ -13,7 +13,7 @@ flex-direction: column;
   align-items: center;
 }
 .container{
-  width: 90%;
+  width: 80%;
   /* border: 1px solid; */
 
   
@@ -34,7 +34,6 @@ flex-direction: column;
 }
 input{
   width: 35%;
-  font-size: medium;
 }
 .add{
   padding: 10px;
@@ -53,29 +52,29 @@ input{
   gap: 5px;
 }
 .delete{
-  width: 10%;
-  padding: 10px;
+  width: 5%;
+  padding: 5px;
   cursor: pointer;
 }
 .date{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25%;
+  width: 35%;
   padding: 10px;
 }
 .name{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25%;
+  width: 35%;
   padding: 10px;
 }
 .amount{
   display: flex;
   align-items: center;
   justify-content: center; 
-  width: 25%;
+  width: 10%;
   padding: 10px;
 }
 .totalExpenseDiv{
@@ -87,4 +86,15 @@ input{
   border-radius: 5px;
   padding-left: 45px;
   padding-right: 45px;
+}
+
+@media (max-width: 700px){
+*{
+  font-size: small;
+  padding: 3px !important;
+  margin: 2px !important;
+}
+body{
+  /* background: black; */
+}
 }
