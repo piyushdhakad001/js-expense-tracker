@@ -6,6 +6,23 @@ const item = document.querySelector(".item");
 const amount = document.querySelector(".amount");
 const addButton = document.querySelector(".add");
 
+// TOTAL EXPENSE CONTAINER
+let total = 0;
+
+const totalExpenseDiv = document.createElement("div");
+totalExpenseDiv.classList.toggle("totalExpenseDiv");
+
+const totalExpenseText = document.createElement("p");
+totalExpenseText.textContent = "Total Expenses";
+
+const totalAmount = document.createElement("p");
+totalAmount.textContent = `$${total}`;
+
+totalExpenseDiv.appendChild(totalExpenseText);
+totalExpenseDiv.appendChild(totalAmount);
+container.appendChild(totalExpenseDiv);
+
+
 addButton.addEventListener("click", () => {
 const expense = ({
   date: dateInput.value,
@@ -20,9 +37,9 @@ renderExpense();
 let expenses = [];
 function renderExpense() {
   expenseContainer.innerHTML = "";
-  
+  total = 0;
   expenses.forEach((expense, index) => {
-    
+    total += expense.amount;
 
     const cont = document.createElement("div");
     cont.classList.toggle("cont");
@@ -46,5 +63,9 @@ function renderExpense() {
 
     
   });
-  
+  totalExpense();
+}
+
+function totalExpense() {
+  totalAmount.textContent = `$${total.toFixed(2)}`;
 }
