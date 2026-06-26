@@ -58,16 +58,20 @@ function renderExpense() {
     const cont = document.createElement("div");
     cont.classList.toggle("cont");
     const deleteButton = document.createElement("button");
+    deleteButton.classList.toggle("delete")
     deleteButton.textContent = "X";
 
     const itemDate = document.createElement("p");
-    itemDate.textContent = `${dateInput.value}`;
+    itemDate.classList.toggle("date")
+    itemDate.textContent = `[${expense.date}]`;
 
     const itemName = document.createElement("p");
-    itemName.textContent = item.value;
+     itemName.classList.toggle("name")
+    itemName.textContent = expense.item;
 
     const itemAmount = document.createElement("p");
-    itemAmount.textContent = `$${amount.value}`;
+ itemAmount.classList.toggle("amount")
+    itemAmount.textContent = `$${expense.amount}`;
 
     cont.appendChild(deleteButton);
     cont.appendChild(itemDate);
