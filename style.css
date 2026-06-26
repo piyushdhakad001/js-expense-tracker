@@ -9,10 +9,6 @@ flex-direction: column;
   width: 90%;
   
 }
-/* .expense-container{
-
-} */
-
 .cont{
   display: flex;
   justify-content: space-between;

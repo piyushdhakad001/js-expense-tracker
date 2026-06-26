@@ -61,6 +61,11 @@ function renderExpense() {
     cont.appendChild(itemAmount);
     expenseContainer.appendChild(cont);
 
+    deleteButton.addEventListener('click', () => {
+      total -= parseFloat(itemAmount.textContent.replace("$", ""));
+      expenses.splice(index, 1);
+      renderExpense();
+    })
     
   });
   totalExpense();
