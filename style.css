@@ -1,0 +1,19 @@
+
+
+body{
+  display: flex;
+flex-direction: column;
+  justify-content: center;
+}
+.container{
+  width: 90%;
+  
+}
+/* .expense-container{
+
+} */
+
+.cont{
+  display: flex;
+  justify-content: space-between;
+}
