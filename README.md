@@ -5,6 +5,10 @@ A clean, responsive, and persistent web-based expense tracking application built
 ## Live Demo
 🔗 [View Live Application](https://piyushdhakad001.github.io/js-expense-tracker/)
 
+## Screenshot
+
+![Expense Tracker Preview](screenshot.png)
+
 ## Features
 - **Add Expenses:** Record item names, transaction dates, and precise monetary amounts.
 - **Persistent Storage:** Automatically saves your expense history using browser `localStorage` so data isn't lost on refresh.
